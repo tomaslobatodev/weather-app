@@ -8,12 +8,12 @@ const getWeather = async (input) => {
     const data = await response.json()
     return data
   } catch (err) {
-    output.textContent = "Error"
+    return
   }
 }
 
 const showResults = (data) => {
-  console.log(data)
+
   let time = data.location.localtime
 
   output.style.display = "flex"
@@ -30,6 +30,7 @@ fetchButton.addEventListener("click", async (ev) => {
   ev.preventDefault()
   const city = cityInput.value
   const data = await getWeather(city)
-  showResults(data)
+  if (data) showResults(data)
+  else output.textContent = "There was an error"
 })
 
