@@ -69,6 +69,7 @@ a {
 
 @media screen {
   #output {
+    display: none;
     width: 100%;
   }
 }
