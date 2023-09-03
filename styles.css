@@ -66,3 +66,9 @@ a {
   width: 100%;
   justify-content: space-between;
 }
+
+@media screen {
+  #output {
+    width: 100%;
+  }
+}
