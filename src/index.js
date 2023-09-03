@@ -4,7 +4,7 @@ const output = document.getElementById("output")
 
 const getWeather = async (input) => {
   try {
-    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=419fc301be3543d19c1124810230309&q=${input}`, {mode: "cors"})
+    const response = await fetch(`htt://api.weatherapi.com/v1/current.json?key=419fc301be3543d19c1124810230309&q=${input}`, {mode: "cors"})
     const data = await response.json()
     return data
   } catch (err) {
