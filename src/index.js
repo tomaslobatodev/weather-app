@@ -4,7 +4,7 @@ const output = document.getElementById("output")
 
 const getWeather = async (input) => {
   try {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=419fc301be3543d19c1124810230309&q=${input}`)
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=419fc301be3543d19c1124810230309&q=${input}`, {mode: "cors"})
     const data = await response.json()
     return data
   } catch (err) {
@@ -13,7 +13,8 @@ const getWeather = async (input) => {
 }
 
 const showResults = (data) => {
-  const time = data.location.localtime
+  console.log(data)
+  let time = data.location.localtime
 
   output.style.display = "flex"
   document.getElementById("place").textContent = `${data.location.name}, ${data.location.country}`
