@@ -1,75 +1,134 @@
 body {
+  background: linear-gradient(to bottom, rgb(226, 226, 226), #111a24);
+  background-size: cover; 
+  background-attachment: fixed; 
   font-family: sans-serif;
+  color: black;
+  margin: 16px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 form {
+  height: 48px;
   display: flex;
-  align-items: center;
-  height: 36px;
-  margin-bottom: 24px;
+  gap: 8px;
 }
 
-input {
-  height: 100%;
-  padding: 0 10px;
+form input {
+  padding: 0 16px;
   border-radius: 8px;
-  border: 1px solid black;
-  width: 200px;
+  width: 360px;
+  font-size: 20px;
+  border: 1px solid rgb(195, 195, 195);
 }
 
-button {
-  height: 100%;
+form input:focus {
+  border-bottom: 3px solid black;
+  transition: .1s;
+  outline: none;
+}
+
+form button {
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  color: white;
+  background-color: black;
   border: none;
-  background-color: white;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
-h2, h1, h3 {
-  margin: 4px
+form button:hover {
+  transition: .1s;
+  border-bottom: 2px solid white;
 }
 
-h1 {
-  font-size: 48px;
+#place {
+  font-size: 36px;
+  margin: 20px 0;
 }
 
-#output {
-  display: none;
-  width:55%;
-}
-
-.left {
-  padding: 10px 0;
-  padding-right: 20px;
-  border-right: 2px solid black;
-  width: 45%;
-  max-width: 225px;
+#output .left {
+  gap: 8px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  border-right: 3px solid black;
+  padding-right: 44px;
 }
 
-.right {
-  padding: 6px 0;
-  width: 55%;
+#condition {
+  font-size: 46px;
+}
+
+#temp {
+  font-size: 96px;
+  font-weight: bolder;
+}
+
+#output .right {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-left: 8px;
+  padding-left: 16px;
+  font-size: 32px;
 }
 
-a {
-  font-size: 20px;
-}
-
-.header {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-@media screen {
-  #output {
-    display: none;
-    width: 100%;
+@media screen and (max-width:630px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 16px 0;
   }
+  
+  form {
+    width: 99%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  form input {
+    width: 75vw;
+    box-sizing: border-box;
+  }
+
+  form button {
+    min-width: 48px;
+  }
+
+  #place {
+    font-size: 20px;
+  }
+
+  #output {
+    flex-direction: column;
+  }
+
+  #output .left {
+    border: none;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 16px;
+  }
+
+  #output .right {
+    width: 100%;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+  }
+
 }
